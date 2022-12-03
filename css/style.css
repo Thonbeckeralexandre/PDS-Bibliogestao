@@ -1,0 +1,25 @@
+.btn-success {
+    color: #fff;
+    background-color: #000000;
+    border-color: #5cb85c;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+}
+.modal {
+    margin-top: 15%;
+}
+
+.error {    
+    color: red !important;
+}
+
+#logout {
+    color: #7c7f81;
+}
+
+.fa-user-times {
+    size: 170%;
+}
