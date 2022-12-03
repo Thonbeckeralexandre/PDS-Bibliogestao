@@ -3,8 +3,8 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 
-require_once('/wamp64/www/gestao_biblio/dao/dao_categoria_usuario.php');
-require_once('/wamp64/www/gestao_biblio/apoio/apoio.php');
+require_once('dao/dao_categoria_usuario.php');
+require_once('apoio/apoio.php');
 
 $acao = !empty($_POST['acao']) ? $_POST['acao'] : $_GET['acao'];
 

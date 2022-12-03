@@ -7,10 +7,10 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require_once('/wamp64/www/gestao_biblio/dao/dao_locatarios.php');
-require_once('/wamp64/www/gestao_biblio/dao/dao_locacoes.php');
-require_once('/wamp64/www/gestao_biblio/dao/dao_livros.php');
-require_once('/wamp64/www/gestao_biblio/apoio/apoio.php');
+require_once('dao/dao_locatarios.php');
+require_once('dao/dao_locacoes.php');
+require_once('dao/dao_livros.php');
+require_once('apoio/apoio.php');
 
 $acao = !empty($_POST['acao']) ? $_POST['acao'] : $_GET['acao'];
 
