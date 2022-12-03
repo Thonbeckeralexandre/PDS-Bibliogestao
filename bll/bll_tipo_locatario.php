@@ -26,11 +26,11 @@ if ($acao === 'inserir') {
 
     if ($id_tipo_locatario) {
         if ($dao_tipo_locatarios->editar($vo_tipo_locatario)) {
-            $retorno = trim($vo_tipo_locatario->get_id_tipo_locatario());
+            $retorno = $vo_tipo_locatario->get_id_tipo_locatario() ? trim($vo_tipo_locatario->get_id_tipo_locatario()) : null;
         }
     } else {
         if ($dao_tipo_locatarios->inserir($vo_tipo_locatario)) {
-            $retorno = trim($vo_tipo_locatario->get_id_tipo_locatario());
+            $retorno = $vo_tipo_locatario->get_id_tipo_locatario() ? trim($vo_tipo_locatario->get_id_tipo_locatario()) : null;
         }
     }
     
@@ -51,8 +51,8 @@ if ($acao === "carrega_selected") {
     if ($vo_tipo_locatario) {
         foreach ($vo_tipo_locatario as $temp) {
             array_push($retorno, array(
-                'id_tipo_locatario' => trim($temp->get_id_tipo_locatario()),
-                'tipo' => trim($temp->get_tipo())
+                'id_tipo_locatario' => $temp->get_id_tipo_locatario() ? trim($temp->get_id_tipo_locatario()) : null,
+                'tipo' => $temp->get_tipo() ? trim($temp->get_tipo()) : null
             ));
         }
     }

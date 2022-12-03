@@ -26,11 +26,11 @@ if ($acao === 'inserir') {
 
     if ($id_autor) {
         if ($dao_autores->editar($vo_autores)) {
-            $retorno = trim($vo_autores->get_id_autor());
+            $retorno = $vo_autores->get_id_autor() ? trim($vo_autores->get_id_autor()) : null;
         }
     } else {
         if ($dao_autores->inserir($vo_autores)) {
-            $retorno = trim($vo_autores->get_id_autor());
+            $retorno = $vo_autores->get_id_autor() ? trim($vo_autores->get_id_autor()) : null;
         }
     }
     
@@ -52,8 +52,8 @@ if ($acao === "carrega_selected") {
     if ($vo_autores) {
         foreach ($vo_autores as $temp) {
             array_push($retorno, array(
-                'id_autor' => trim($temp->get_id_autor()),
-                'nome' => trim($temp->get_nome())
+                'id_autor' => $temp->get_id_autor() ? trim($temp->get_id_autor()) : null,
+                'nome' => $temp->get_nome() ? trim($temp->get_nome()) : null
             ));
         }
     }

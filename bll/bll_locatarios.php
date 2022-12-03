@@ -32,10 +32,10 @@ if ($acao == 'carrega_datatable_locatarios') {
             $funcoes .= '</center>';
 
             $retorno = array(
-                'nome' => trim($temp->get_nome()),
-                'telefone' => trim($temp->get_telefone()),
-                'tipo' => trim($tipo->get_tipo()),
-                'codigo' => trim($temp->get_codigo()),
+                'nome' => $temp->get_nome() ? trim($temp->get_nome()) : null,
+                'telefone' => $temp->get_telefone() ? trim($temp->get_telefone()) : null,
+                'tipo' => $tipo->get_tipo() ? trim($tipo->get_tipo()) : null,
+                'codigo' => $temp->get_codigo() ? trim($temp->get_codigo()) : null,
                 'funcoes' => $funcoes
             );
             array_push($dados['data'], $retorno);
@@ -66,11 +66,11 @@ if ($acao === 'inserir') {
 
     if ($id_locatario) {
         if ($dao_locatarios->editar($vo_locatarios)) {
-            $retorno = trim($vo_locatarios->get_id_locatario());
+            $retorno = $vo_locatarios->get_id_locatario() ? trim($vo_locatarios->get_id_locatario()) : null;
         }
     } else {
         if ($dao_locatarios->inserir($vo_locatarios)) {
-            $retorno = trim($vo_locatarios->get_id_locatario());
+            $retorno = $vo_locatarios->get_id_locatario() ? trim($vo_locatarios->get_id_locatario()) : null;
         }
     }
     
@@ -94,14 +94,14 @@ if ($acao == 'carrega_objeto') {
 
     if ($vo_locatarios) {
         $retorno = array(
-            'id_locatario' => trim($vo_locatarios->get_id_locatario()),
-            'nome' => trim($vo_locatarios->get_nome()),
-            'endereco' => trim($vo_locatarios->get_endereco()),
-            'telefone' => trim($vo_locatarios->get_telefone()),
-            'responsavel' => trim($vo_locatarios->get_responsavel()),
-            'ex_tipo' => trim($tipo_locatario->get_id_tipo_locatario()),
-            'email' => trim($vo_locatarios->get_email()),
-            'codigo' => trim($vo_locatarios->get_codigo())
+            'id_locatario' => $vo_locatarios->get_id_locatario() ? trim($vo_locatarios->get_id_locatario()) : null,
+            'nome' => $vo_locatarios->get_nome() ? trim($vo_locatarios->get_nome()) : null,
+            'endereco' => $vo_locatarios->get_endereco() ? trim($vo_locatarios->get_endereco()) : null,
+            'telefone' => $vo_locatarios->get_telefone() ? trim($vo_locatarios->get_telefone()) : null,
+            'responsavel' => $vo_locatarios->get_responsavel() ? trim($vo_locatarios->get_responsavel()) : null,
+            'ex_tipo' => $tipo_locatario->get_id_tipo_locatario() ? trim($tipo_locatario->get_id_tipo_locatario()) : null,
+            'email' => $vo_locatarios->get_email() ? trim($vo_locatarios->get_email()) : null,
+            'codigo' => $vo_locatarios->get_codigo() ? trim($vo_locatarios->get_codigo()) : null
         );
     }
     echo json_encode($retorno);
@@ -122,9 +122,9 @@ if ($acao === "carrega_select") {
     if ($vo_locatarios) {
         foreach ($vo_locatarios as $temp) {
             array_push($retorno, array(
-                'id_locatario' => trim($temp->get_id_locatario()),
-                'nome' => trim($temp->get_nome()),                
-                'codigo' => trim($temp->get_codigo())              
+                'id_locatario' => $temp->get_id_locatario() ? trim($temp->get_id_locatario()) : null,
+                'nome' => $temp->get_nome() ? trim($temp->get_nome()) : null,                
+                'codigo' => $temp->get_codigo() ? trim($temp->get_codigo()) : null              
             ));
         }
     }

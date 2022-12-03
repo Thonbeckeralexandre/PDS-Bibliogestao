@@ -26,11 +26,11 @@ if ($acao === 'inserir') {
 
     if ($id_categoria) {
         if ($dao_categorias->editar($vo_categorias)) {
-            $retorno = trim($vo_categorias->get_id_categoria());
+            $retorno = $vo_categorias->get_id_categoria() ? trim($vo_categorias->get_id_categoria()) : null;
         }
     } else {
         if ($dao_categorias->inserir($vo_categorias)) {
-            $retorno = trim($vo_categorias->get_id_categoria());
+            $retorno = $vo_categorias->get_id_categoria() ? trim($vo_categorias->get_id_categoria()) : null;
         }
     }
     
@@ -51,8 +51,8 @@ if ($acao === "carrega_selected") {
     if ($vo_categorias) {
         foreach ($vo_categorias as $temp) {
             array_push($retorno, array(
-                'id' => trim($temp->get_id_categoria()),
-                'nome' => trim($temp->get_nome())
+                'id' => $temp->get_id_categoria() ? trim($temp->get_id_categoria()) : null,
+                'nome' => $temp->get_nome() ? trim($temp->get_nome()) : null
             ));
         }
     }

@@ -120,7 +120,7 @@ if ($acao === 'inserir') {
         $vo_locacoes->set_status('A');
 
         if ($dao_locacoes->inserir($vo_locacoes)) {
-            $retorno = trim($vo_locacoes->get_id_locacao());
+            $retorno = $vo_locacoes->get_id_locacao() ? trim($vo_locacoes->get_id_locacao()) : null;
         }        
 
         $array_livros = !empty($_POST['array_livros']) ? $_POST['array_livros'] : null;

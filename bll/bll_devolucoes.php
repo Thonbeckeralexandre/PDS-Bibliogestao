@@ -24,11 +24,11 @@ if ($acao == 'carrega_objeto') {
 
     if ($vo_devolucoes) {
         $retorno = array(
-            'ex_livro' => trim($vo_devolucoes->get_ex_livro()),
-            'ex_locacao' => trim($vo_devolucoes->get_ex_locacao()),
-            'datahora_entrega' => trim($vo_devolucoes->get_datahora_entrega()),
-            'obs' => trim($vo_devolucoes->get_obs()),
-            'ex_usuario' => trim($vo_devolucoes->get_ex_usuario())
+            'ex_livro' => $vo_devolucoes->get_ex_livro() ? trim($vo_devolucoes->get_ex_livro()) : null,
+            'ex_locacao' => $vo_devolucoes->get_ex_locacao() ? trim($vo_devolucoes->get_ex_locacao()) : null,
+            'datahora_entrega' => $vo_devolucoes->get_datahora_entrega() ? trim($vo_devolucoes->get_datahora_entrega()) : null,
+            'obs' => $vo_devolucoes->get_obs() ? trim($vo_devolucoes->get_obs()) : null,
+            'ex_usuario' => $vo_devolucoes->get_ex_usuario() ? trim($vo_devolucoes->get_ex_usuario()) : null
         );
     }
 

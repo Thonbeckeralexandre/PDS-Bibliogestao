@@ -47,7 +47,7 @@ if ($acao === 'inserir') {
 
     
     if ($dao_usuarios->inserir($vo_usuarios)) {
-        $retorno = trim($vo_usuarios->get_id_usuario());
+        $retorno = $vo_usuarios->get_id_usuario() ? trim($vo_usuarios->get_id_usuario()) : null;
     }
     
     echo json_encode(array(

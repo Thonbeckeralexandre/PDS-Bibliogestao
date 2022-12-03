@@ -86,11 +86,11 @@ if ($acao === 'inserir') {
 
     if ($id_livro) {
         if ($dao_livros->editar($vo_livros)) {
-            $retorno = trim($vo_livros->get_id_livro());
+            $retorno = $vo_livros->get_id_livro() ? trim($vo_livros->get_id_livro()) : null;
         }
     } else {
         if ($dao_livros->inserir($vo_livros)) {
-            $retorno = trim($vo_livros->get_id_livro());
+            $retorno = $vo_livros->get_id_livro() ? trim($vo_livros->get_id_livro()) : null;
         }
     }
 
@@ -131,16 +131,16 @@ if ($acao == 'carrega_objeto') {
 
     if ($vo_livros) {
         $retorno = array(
-            'id_livro' => trim($vo_livros->get_id_livro()),
-            'nome' => trim($vo_livros->get_nome()),
-            'edicao' => trim($vo_livros->get_edicao()),
-            'colecao' => trim($vo_livros->get_colecao()),
-            'obs' => trim($vo_livros->get_obs()),
-            'ex_categoria' => trim($vo_livros->get_ex_categoria()),
-            'disponivel' => trim($vo_livros->get_disponivel()),
-            'isbn' => trim($vo_livros->get_isbn()),
+            'id_livro' => $vo_livros->get_id_livro() ? trim($vo_livros->get_id_livro()) : null,
+            'nome' => $vo_livros->get_nome() ? trim($vo_livros->get_nome()) : null,
+            'edicao' => $vo_livros->get_edicao() ? trim($vo_livros->get_edicao()) : null,
+            'colecao' => $vo_livros->get_colecao() ? trim($vo_livros->get_colecao()) : null,
+            'obs' => $vo_livros->get_obs() ? trim($vo_livros->get_obs()) : null,
+            'ex_categoria' => $vo_livros->get_ex_categoria() ? trim($vo_livros->get_ex_categoria()) : null,
+            'disponivel' => $vo_livros->get_disponivel() ? trim($vo_livros->get_disponivel()) : null,
+            'isbn' => $vo_livros->get_isbn() ? trim($vo_livros->get_isbn()) : null,
             'array_autores' => $array_autores,
-            'codigo' => trim($vo_livros->get_codigo())
+            'codigo' => $vo_livros->get_codigo() ? trim($vo_livros->get_codigo()) : null
         );
     }
 
