@@ -8,6 +8,7 @@
         $('#telefone').val('');
         $('#email').val('');
         $('#codigo').val('');
+        $('#id_locatario').val('');
         $.carrega_select_tipo_locatario('');
     }
     
@@ -286,11 +287,10 @@
                     'id_locatario': $("#id_locatario").val()
                 },
                 success: function(data) {
-                    console.log(data);
                     if (data == false) {
                         Swal.fire(
                             'Erro!',
-                            "Código de livro já existente...",
+                            "Código de locatario já existente...",
                             'error'
                         )
                         $("#codigo").val('');
