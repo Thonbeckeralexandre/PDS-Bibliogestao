@@ -1,3 +1,3 @@
 <?php
-    header('Location: http://bibliogestao/login.php');
+    header('Location: /login.php');
 ?>
