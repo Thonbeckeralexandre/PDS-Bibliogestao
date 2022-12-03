@@ -3,8 +3,8 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 
-require_once('dao/dao_usuarios.php');
-require_once('apoio/apoio.php');
+require_once('/dao/dao_usuarios.php');
+require_once('/apoio/apoio.php');
 
 $acao = !empty($_POST['acao']) ? $_POST['acao'] : $_GET['acao'];
 
