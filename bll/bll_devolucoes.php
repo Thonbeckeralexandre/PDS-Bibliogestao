@@ -7,8 +7,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require_once('dao/dao_devolucoes.php');
-require_once('apoio/apoio.php');
+require_once('/app/dao/dao_devolucoes.php');
+require_once('/app/apoio/apoio.php');
 
 $acao = !empty($_POST['acao']) ? $_POST['acao'] : $_GET['acao'];
 

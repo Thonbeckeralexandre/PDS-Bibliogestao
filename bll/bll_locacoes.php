@@ -7,12 +7,12 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require_once('dao/dao_locacoes.php');
-require_once('dao/dao_devolucoes.php');
-require_once('dao/dao_livros_nn_locacoes.php');
-require_once('dao/dao_livros_nn_locacoes_historico.php');
-require_once('dao/dao_livros.php');
-require_once('apoio/apoio.php');
+require_once('/app/dao/dao_locacoes.php');
+require_once('/app/dao/dao_devolucoes.php');
+require_once('/app/dao/dao_livros_nn_locacoes.php');
+require_once('/app/dao/dao_livros_nn_locacoes_historico.php');
+require_once('/app/dao/dao_livros.php');
+require_once('/app/apoio/apoio.php');
 
 $acao = !empty($_POST['acao']) ? $_POST['acao'] : $_GET['acao'];
 
