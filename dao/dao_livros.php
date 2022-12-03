@@ -1,6 +1,6 @@
 <?php
 
-$path = '/wamp64/www/gestao_biblio';
+$path = '/app';
 
 require_once($path . '/vo/vo_livros.php');
 require_once($path . '/db/conecta.php');
