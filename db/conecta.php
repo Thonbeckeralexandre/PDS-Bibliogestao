@@ -4,11 +4,11 @@ class db
 {
 
     public static $dbtype = "mysql";
-    public static $host = "localhost";
+    public static $host = "us-cdbr-east-06.cleardb.net";
     public static $port = "3306";
-    public static $user = "root";
-    public static $password = "";
-    public static $db = "gestao_biblio";
+    public static $user = "be4d4168a0887b";
+    public static $password = "e434c4d3";
+    public static $db = "heroku_82d39de6f406fe5";
     public static $conn;
 
     public static function getInstance()
