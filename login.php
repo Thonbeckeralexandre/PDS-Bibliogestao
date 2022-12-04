@@ -3,7 +3,7 @@
         session_start();
     }
     if (isset($_SESSION['usuario'])) {        
-        header('Location: http://bibliogestao/inicio.php');
+        header('Location: /inicio.php');
     }
 ?>
 <!DOCTYPE html>

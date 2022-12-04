@@ -74,6 +74,6 @@ function verifica_login() {
     }
     if (!isset($_SESSION['usuario'])) {
         session_destroy();
-        header('Location: http://bibliogestao/login.php');
+        header('Location: /login.php');
     }
 }
