@@ -303,6 +303,12 @@
 
     $("#filtro_status").change(() => {
         $.carrega_tabela_locacoes($("#filtro_status").val());
+        if ($("#filtro_status").val() == 'A') {
+            $("#datahora_tab_locacoes").html('DATA/HORA LOCAÇÃO');
+        } else {            
+            $("#datahora_tab_locacoes").html('DATA/HORA DEVOLUÇÃO');
+        }
+        
     })
 
     $("#select_locatario").change(() => {
