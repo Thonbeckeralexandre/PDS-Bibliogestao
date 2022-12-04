@@ -267,8 +267,10 @@
     $.carrega_tabela_locacoes = function() {
         if ($("#filtro_status").val() == 'A') {
             $("#livros_tab_locacoes").html('LIVROS EM HAVER');
+            $("#datahora_tab_locacoes").html('DATA/HORA LOCAÇÃO');
         } else {
             $("#livros_tab_locacoes").html('LIVROS');
+            $("#datahora_tab_locacoes").html('DATA/HORA DEVOLUÇÃO');
         }
         if (tab_locacoes) {
             tab_locacoes.destroy();
@@ -302,13 +304,7 @@
     $.carrega_tabela_locacoes();
 
     $("#filtro_status").change(() => {
-        $.carrega_tabela_locacoes($("#filtro_status").val());
-        if ($("#filtro_status").val() == 'A') {
-            $("#datahora_tab_locacoes").html('DATA/HORA LOCAÇÃO');
-        } else {            
-            $("#datahora_tab_locacoes").html('DATA/HORA DEVOLUÇÃO');
-        }
-        
+        $.carrega_tabela_locacoes($("#filtro_status").val());        
     })
 
     $("#select_locatario").change(() => {
