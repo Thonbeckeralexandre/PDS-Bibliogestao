@@ -28,7 +28,7 @@ if ($acao == 'carrega_objeto') {
             'ex_livro' => $vo_devolucoes->get_ex_livro() ? trim($vo_devolucoes->get_ex_livro()) : null,
             'ex_locacao' => $vo_devolucoes->get_ex_locacao() ? trim($vo_devolucoes->get_ex_locacao()) : null,
             'datahora_entrega' => $vo_devolucoes->get_datahora_entrega() ? trim($vo_devolucoes->get_datahora_entrega()) : null,
-            'obs' => $obs,
+            'obs' => $obs->obs,
             'ex_usuario' => $vo_devolucoes->get_ex_usuario() ? trim($vo_devolucoes->get_ex_usuario()) : null
         );
     }
