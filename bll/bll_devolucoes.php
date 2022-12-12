@@ -24,6 +24,11 @@ if ($acao == 'carrega_objeto') {
     $obs = $dao_devolucoes->concat_obs($ex_locacao);
     $a = strval($obs->obs);
 
+    var_dump($obs);
+    var_dump($a);
+    exit;
+    
+
     if ($vo_devolucoes) {
         $retorno = array(
             'ex_livro' => $vo_devolucoes->get_ex_livro() ? trim($vo_devolucoes->get_ex_livro()) : null,
