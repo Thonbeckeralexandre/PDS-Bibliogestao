@@ -126,24 +126,18 @@ class dao_devolucoes
         }
     }
 
-    public function concat_obs($ex_locacao, $count)
+    public function concat_obs($ex_locacao)
     {
-        $concat = " ";
-        if ($count > 1) {
-            $concat = " GROUP_CONCAT(obs SEPARATOR ' | ') as obs ";
-        } else {
-            $concat = " obs as obs ";
-        }
         
         $sql = "SELECT
-                    $concat
+                    GROUP_CONCAT(obs SEPARATOR ' | ') as obs
                 FROM 
                     $this->tabela
                 WHERE
                     ex_locacao = :ex_locacao
                 GROUP BY
                     ex_locacao";
-        $sql = db::prepare($sql);        
+        $sql = db::prepare($sql);
         $sql->bindParam(':ex_locacao', $ex_locacao);
         $sql->execute();
         $sql = $sql->fetch();
@@ -151,25 +145,6 @@ class dao_devolucoes
             return $sql;
         } else {
             return false;
-        }
-    }
-
-    public function conta_obs($ex_locacao)
-    {
-        $sql = "SELECT 
-                    COUNT(obs IS NOT NULL) as total
-                FROM 
-                    $this->tabela 
-                WHERE 
-                    ex_locacao = :ex_locacao";
-        $sql = db::prepare($sql);
-        $sql->bindParam(':ex_locacao', $ex_locacao);
-        $sql->execute();
-        $sql = $sql->fetch();
-        if ($sql) {
-            return $sql->total;
-        } else {
-            return null;
         }
     }
 }
