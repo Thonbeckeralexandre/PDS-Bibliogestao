@@ -65,7 +65,7 @@
                                         <thead class="bg-dark" style="color: white; font-family:sans-serif !important">
                                             <tr>
                                                 <th style="width: 33%;">NOME</th>
-                                                <th style="width: 19%; background: none;">CATEGORIA</th>
+                                                <th style="width: 19%;">CATEGORIA</th>
                                                 <th style="width: 9%;">DISPONIBILIDADE</th>
                                                 <th style="width: 10%;">CÓDIGO</th>
                                                 <th style="width: 19%;">AUTOR</th>
