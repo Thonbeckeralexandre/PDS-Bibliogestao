@@ -21,7 +21,8 @@ if ($acao == 'carrega_objeto') {
     $ex_locacao = !empty($_POST['ex_locacao']) ? $_POST['ex_locacao'] : null;
 
     $vo_devolucoes = $dao_devolucoes->carrega_objeto_por_locacao($ex_locacao);
-    $obs = $dao_devolucoes->concat_obs($ex_locacao);
+    $count = $dao_devolucoes->conta_obs($ex_locacao);
+    $obs = $dao_devolucoes->concat_obs($ex_locacao, $count);
     $a = strval($obs->obs);
 
     var_dump($obs);
