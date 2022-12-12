@@ -125,4 +125,26 @@ class dao_devolucoes
             return null;
         }
     }
+
+    public function concat_obs($ex_locacao)
+    {
+        
+        $sql = "SELECT
+                    GROUP_CONCAT(obs SEPARATOR ' | ') as obs
+                FROM 
+                    $this->tabela
+                WHERE
+                    ex_locacao = :ex_locacao
+                GROUP BY
+                    ex_locacao";
+        $sql = db::prepare($sql);        
+        $sql->bindParam(':ex_locacao', $ex_locacao);
+        $sql->execute();
+        $sql = $sql->fetch();
+        if ($sql) {
+            return $sql;
+        } else {
+            return false;
+        }
+    }
 }
