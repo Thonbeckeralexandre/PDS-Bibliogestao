@@ -11,6 +11,14 @@ class dao_locacoes
 
     public function carrega_datatable($status)
     {
+        $where = '';
+
+        if($status == "I"){
+            $where = "a.id_locacao in (SELECT ex_locacao FROM devolucoes)";
+        }else{
+            $where = "a.status = :status";
+        }
+
         $retorno = array();
         $sql = "SELECT 
                     a.id_locacao as id_locacao,
@@ -22,11 +30,13 @@ class dao_locacoes
                 INNER JOIN
                     locatarios b ON a.ex_locatario = b.id_locatario
                 WHERE
-                    status = :status
+                    $where
                 ORDER BY 
                     b.nome";
-        $sql = db::prepare($sql);        
-        $sql->bindParam(':status', $status);
+        $sql = db::prepare($sql); 
+        if($status == "A"){
+            $sql->bindParam(':status', $status);
+        }
         $sql->execute();
         $sql = $sql->fetchAll();
         if ($sql) {
