@@ -73,6 +73,8 @@ class dao_devolucoes
                     livros b ON a.ex_livro = b.id_livro
                 WHERE
                     a.ex_locacao = :ex_locacao
+                AND 
+                    a.datahora_entrega IS NOT NULL
                 GROUP BY
                     a.ex_locacao";
         $sql = db::prepare($sql);        
